@@ -16,29 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/admin')->group(function () {
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+//    Route::middleware(['auth'])->group(function () {
+//        Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'showDashboard'])->name('dashboard');
+//    });
+    Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'showDashboard'])->name('dashboard');
 
-    Route::get('/login', function () {
-        return view('login');
-    })->name('show-form-login');
+    Route::get('/login', [\App\Http\Controllers\LoginController::class, 'showFormLogin'])->name('show-form-login');
+    Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('submit-login');
+    Route::get('/register', [\App\Http\Controllers\RegisterController::class, 'showFormRegister'])->name('show-form-register');
 
-    Route::post('/login', function (Request $request) {
-        // code logic login
-        $email = $request->get('email');
-        $password = $request->get('password');
+    Route::post('/register', [\App\Http\Controllers\RegisterController::class, 'register'])
+        ->middleware('checkAge')->name('register');
 
-        if ($email == 'admin@gmail.com' && $password == '1234') {
-            // chuyen huong
-            return redirect()->route('dashboard');
-        } else {
-            return redirect()->route('show-form-login');
-        }
-    })->name('submit-login');
-
-    Route::get('/register', function () {
-        return view('register');
-    })->name('register');
+    Route::get('/forgot-password', [\App\Http\Controllers\LoginController::class, 'showFormForgetPassword'])->name('forgot-password');
+    Route::post('/forgot-password', [\App\Http\Controllers\LoginController::class, 'forgotPassword'])->name('forgot-password-submit');
 });
 
