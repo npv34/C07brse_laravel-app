@@ -30,5 +30,14 @@ Route::prefix('/admin')->group(function () {
 
     Route::get('/forgot-password', [\App\Http\Controllers\LoginController::class, 'showFormForgetPassword'])->name('forgot-password');
     Route::post('/forgot-password', [\App\Http\Controllers\LoginController::class, 'forgotPassword'])->name('forgot-password-submit');
+
+    Route::prefix('products')->group(function (){
+        Route::get('/', [\App\Http\Controllers\ProductController::class, 'showListProduct'])->name('products.list');
+    });
+
+    Route::prefix('orders')->group(function (){
+        Route::get('/', [\App\Http\Controllers\ProductController::class, 'showListProduct'])->name('products.list');
+    });
+
 });
 
