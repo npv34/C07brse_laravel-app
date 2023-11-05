@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -12,6 +14,12 @@ class RegisterController extends Controller
     }
 
     function register(Request $request) {
-        dd("oke");
+        $user = new User();
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->birthday = $request->get('birthday');
+        $user->password = Hash::make($request->get('password'));
+        $user->save();
+        return redirect()->route('show-form-login');
     }
 }

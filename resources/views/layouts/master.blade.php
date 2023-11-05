@@ -61,6 +61,19 @@
             overflow-x: hidden;
             overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
         }
+
+        .my-active span{
+            background-color: #4171c4 !important;
+            color: white !important;
+            border-color: #5cb85c !important;
+        }
+        ul.pager>li {
+            display: inline-flex;
+            padding: 5px;
+        }
+    </style>
+    <style type="text/css">
+
     </style>
 </head>
 <body>
@@ -83,13 +96,6 @@
                 </a>
                 <a
                     href="#"
-                    class="list-group-item list-group-item-action py-2 ripple active"
-                >
-                    <i class="fas fa-chart-area fa-fw me-3"></i
-                    ><span>Webiste traffic</span>
-                </a>
-                <a
-                    href="#"
                     class="list-group-item list-group-item-action py-2 ripple"
                 ><i class="fas fa-lock fa-fw me-3"></i><span>Password</span></a
                 >
@@ -99,45 +105,20 @@
                 ><i class="fas fa-chart-line fa-fw me-3"></i
                     ><span>Analytics</span></a
                 >
+
                 <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-2 ripple"
-                >
-                    <i class="fas fa-chart-pie fa-fw me-3"></i><span>SEO</span>
-                </a>
-                <a
-                    href="#"
+                    href="{{ route('orders.list') }}"
                     class="list-group-item list-group-item-action py-2 ripple"
                 ><i class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a
                 >
+
+
                 <a
-                    href="#"
+                    href="{{ route('customers.list') }}"
                     class="list-group-item list-group-item-action py-2 ripple"
-                ><i class="fas fa-globe fa-fw me-3"></i
-                    ><span>International</span></a
+                ><i class="fas fa-users fa-fw me-3"></i><span>Customers</span></a
                 >
-                <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-2 ripple"
-                ><i class="fas fa-building fa-fw me-3"></i
-                    ><span>Partners</span></a
-                >
-                <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-2 ripple"
-                ><i class="fas fa-calendar fa-fw me-3"></i
-                    ><span>Calendar</span></a
-                >
-                <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-2 ripple"
-                ><i class="fas fa-users fa-fw me-3"></i><span>Users</span></a
-                >
-                <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-2 ripple"
-                ><i class="fas fa-money-bill fa-fw me-3"></i><span>Sales</span></a
-                >
+
             </div>
         </div>
     </nav>

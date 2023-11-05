@@ -1,16 +1,6 @@
 @extends('layouts.master')
 @section('content')
-    <style type="text/css">
-        .my-active span{
-            background-color: #4171c4 !important;
-            color: white !important;
-            border-color: #5cb85c !important;
-        }
-        ul.pager>li {
-            display: inline-flex;
-            padding: 5px;
-        }
-    </style>
+
     <section class="mb-4">
         <div class="card">
             <div class="card-header text-center py-3">

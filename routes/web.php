@@ -36,7 +36,18 @@ Route::prefix('/admin')->group(function () {
     });
 
     Route::prefix('orders')->group(function (){
-        Route::get('/', [\App\Http\Controllers\ProductController::class, 'showListProduct'])->name('products.list');
+        Route::get('/', [\App\Http\Controllers\OrderController::class, 'showListOrder'])->name('orders.list');
+        Route::get('/filter', [\App\Http\Controllers\OrderController::class, 'filter'])->name('orders.filter');
+
+    });
+
+    Route::prefix('/customers')->group(function (){
+       Route::get('/', [\App\Http\Controllers\CustomerController::class, 'index'])->name('customers.list');
+       Route::get('/create', [\App\Http\Controllers\CustomerController::class, 'showFormCreate'])->name('customers.showFormCreate');
+       Route::post('/create', [\App\Http\Controllers\CustomerController::class, 'add'])->name('customers.add');
+        Route::get('/{id}/delete', [\App\Http\Controllers\CustomerController::class, 'delete'])->name('customers.delete');
+        Route::get('/{id}/detail', [\App\Http\Controllers\CustomerController::class, 'detail'])->name('customers.detail');
+
     });
 
 });
