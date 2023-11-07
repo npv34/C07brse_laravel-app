@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -14,7 +16,7 @@ class LoginController extends Controller
         return view('login');
     }
 
-    function login(Request $request) {
+    function login(LoginRequest $request) {
         $email = $request->get('email');
         $password = $request->get('password');
 

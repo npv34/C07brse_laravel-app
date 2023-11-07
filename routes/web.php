@@ -26,7 +26,7 @@ Route::prefix('/admin')->group(function () {
     Route::get('/register', [\App\Http\Controllers\RegisterController::class, 'showFormRegister'])->name('show-form-register');
 
     Route::post('/register', [\App\Http\Controllers\RegisterController::class, 'register'])
-        ->middleware('checkAge')->name('register');
+        ->name('register');
 
     Route::get('/forgot-password', [\App\Http\Controllers\LoginController::class, 'showFormForgetPassword'])->name('forgot-password');
     Route::post('/forgot-password', [\App\Http\Controllers\LoginController::class, 'forgotPassword'])->name('forgot-password-submit');
