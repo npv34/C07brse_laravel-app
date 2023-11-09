@@ -2,15 +2,14 @@
 @section('content')
     <section class="mb-4">
         <div class="card">
-            <div class="card-header text-center py-3">
-                <h5 class="mb-0 text-center">
+            <div class="card-header py-3 d-flex justify-content-between">
+                <h5 class="mb-0">
                     <strong>Customer list</strong>
-                    <a href="{{ route('customers.showFormCreate') }}" class="btn btn-success">Add new</a>
                 </h5>
+                <a href="{{ route('customers.showFormCreate') }}" class="btn btn-success">Add new</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    {{ $customers->links('pagination.custom') }}
                     <table class="table table-hover text-nowrap">
                         <thead>
                         <tr>

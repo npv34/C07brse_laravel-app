@@ -87,8 +87,8 @@
         <div class="position-sticky">
             <div class="list-group list-group-flush mx-3 mt-4">
                 <a
-                    href="#"
-                    class="list-group-item list-group-item-action py-2 ripple"
+                    href="{{ route('dashboard') }}"
+                    class="list-group-item list-group-item-action py-2 ripple {{ request()->routeIs('dashboard') ? 'active' : 'hidden' }}"
                     aria-current="true"
                 >
                     <i class="fas fa-tachometer-alt fa-fw me-3"></i
@@ -108,14 +108,14 @@
 
                 <a
                     href="{{ route('orders.list') }}"
-                    class="list-group-item list-group-item-action py-2 ripple"
+                    class="list-group-item list-group-item-action py-2 ripple {{ request()->routeIs('orders.*') ? 'active' : 'hidden' }}"
                 ><i class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a
                 >
 
 
                 <a
                     href="{{ route('customers.list') }}"
-                    class="list-group-item list-group-item-action py-2 ripple"
+                    class="list-group-item list-group-item-action py-2 ripple {{ request()->routeIs('customers.*') ? 'active' : 'hidden' }}"
                 ><i class="fas fa-users fa-fw me-3"></i><span>Customers</span></a
                 >
 

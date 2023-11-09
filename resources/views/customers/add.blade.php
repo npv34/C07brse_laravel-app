@@ -2,8 +2,8 @@
 @section('content')
     <section class="mb-4">
         <div class="card">
-            <div class="card-header text-center py-3">
-                <h5 class="mb-0 text-center">
+            <div class="card-header py-3">
+                <h5 class="mb-0">
                     <strong>Add customer</strong>
                 </h5>
             </div>
