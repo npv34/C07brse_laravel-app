@@ -21,6 +21,9 @@ class LoginController extends Controller
         $password = $request->get('password');
 
         if ($email == 'admin@gmail.com' && $password == '1234') {
+            // luu lai trang dang nhap vao session
+            session()->put('isLogin', true);
+            session()->put('username', $email);
             // chuyen huong
             return redirect()->route('dashboard');
         } else {
@@ -34,5 +37,10 @@ class LoginController extends Controller
 
     function forgotPassword(Request $request) {
         // code logic
+    }
+
+    function logout() {
+        session()->remove('isLogin');
+        return redirect()->route('show-form-login');
     }
  }

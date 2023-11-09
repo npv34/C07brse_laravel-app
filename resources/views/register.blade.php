@@ -48,7 +48,7 @@
                                     <div class="text-danger">{{ $message }}.</div>
                                     @enderror
 
-                                    <div class="d-flex flex-row align-items-center mb-4">
+                                    <div class="d-flex flex-row align-items-center mb-4 ">
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
                                             <input type="email" name="email" required value="{{ old('email') }}" id="form3Example3c" class="form-control" />

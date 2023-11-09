@@ -212,14 +212,14 @@
                 <!-- Icon dropdown -->
                 <li class="nav-item dropdown">
                     <a
-                        class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
+                        class="nav-link me-3 me-lg-0 dropdown-toggle "
                         href="#"
                         id="navbarDropdown"
                         role="button"
                         data-mdb-toggle="dropdown"
                         aria-expanded="false"
                     >
-                        <i class="united kingdom flag m-0"></i>
+                        <i class="fa-solid fa-globe"></i>
                     </a>
                     <ul
                         class="dropdown-menu dropdown-menu-end"
@@ -297,9 +297,9 @@
                         class="dropdown-menu dropdown-menu-end"
                         aria-labelledby="navbarDropdownMenuLink"
                     >
-                        <li><a class="dropdown-item" href="#">My profile</a></li>
+                        <li><a class="dropdown-item" href="{{ route('profile') }}">My profile</a></li>
                         <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                        <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                     </ul>
                 </li>
             </ul>
