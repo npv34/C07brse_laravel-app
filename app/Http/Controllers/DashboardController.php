@@ -21,7 +21,7 @@ class DashboardController extends Controller
         return view('dashboard', compact('totalCustomer', 'oC', 'location', 'windSpeed', 'weather'));
     }
 
-    function getWeather($city = "tinh_dien_bien") {
+    function getWeather($city = "Ha Noi") {
         $urlApi = "https://api.openweathermap.org/data/2.5/weather?q=$city&appid=02e3323f29bc461c2346db2fe3989729";
         $response = Http::get($urlApi);
         return json_decode($response->body());

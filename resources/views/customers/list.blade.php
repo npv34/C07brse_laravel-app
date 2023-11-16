@@ -4,9 +4,9 @@
         <div class="card">
             <div class="card-header py-3 d-flex justify-content-between">
                 <h5 class="mb-0">
-                    <strong>Customer list</strong>
+                    <strong>{{ GoogleTranslate::trans('Customer List', app()->getLocale()) }}</strong>
                 </h5>
-                <a href="{{ route('customers.showFormCreate') }}" class="btn btn-success">Add new</a>
+                <a href="{{ route('customers.showFormCreate') }}" class="btn btn-success">{{ GoogleTranslate::trans('Add new', app()->getLocale()) }}</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -14,11 +14,11 @@
                         <thead>
                         <tr>
                             <th scope="col"></th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">City</th>
-                            <th scope="col">Country</th>
+                            <th scope="col">{{ GoogleTranslate::trans('Name', app()->getLocale()) }}</th>
+                            <th scope="col">{{ GoogleTranslate::trans('Address', app()->getLocale()) }}</th>
+                            <th scope="col">{{ GoogleTranslate::trans('Phone', app()->getLocale()) }}</th>
+                            <th scope="col">{{ GoogleTranslate::trans('City', app()->getLocale()) }}</th>
+                            <th scope="col">{{ GoogleTranslate::trans('Country', app()->getLocale()) }}</th>
                             <th></th>
                         </tr>
                         </thead>
@@ -27,12 +27,12 @@
                             <tr>
                                 <th scope="row">{{ $key + 1 }}</th>
                                 <td>
-                                    <a href="{{ route('customers.detail', $customer->customerNumber) }}">{{ $customer->customerName }}</a>
+                                    <a href="{{ route('customers.detail', $customer->customerNumber) }}">{{ GoogleTranslate::trans($customer->customerName, app()->getLocale()) }}</a>
                                     </td>
-                                <td>{{ $customer->getAllAddress() }}</td>
+                                <td>{{ GoogleTranslate::trans($customer->getAllAddress(), app()->getLocale()) }}</td>
                                 <td>{{ $customer->phone }}</td>
-                                <td>{{ $customer->city }}</td>
-                                <td>{{ $customer->country }}</td>
+                                <td>{{ GoogleTranslate::trans($customer->city, app()->getLocale()) }}</td>
+                                <td>{{ GoogleTranslate::trans($customer->country, app()->getLocale()) }}</td>
                                 <td><a href="{{ route('customers.delete', $customer->customerNumber) }}" class="btn btn-danger">Delete</a></td>
                             </tr>
                         @endforeach

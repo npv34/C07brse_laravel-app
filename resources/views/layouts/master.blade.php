@@ -92,12 +92,12 @@
                     aria-current="true"
                 >
                     <i class="fas fa-tachometer-alt fa-fw me-3"></i
-                    ><span>Main dashboard</span>
+                    ><span>{{ GoogleTranslate::trans('Main Dashboard', app()->getLocale()) }}</span>
                 </a>
                 <a
                     href="#"
                     class="list-group-item list-group-item-action py-2 ripple"
-                ><i class="fas fa-lock fa-fw me-3"></i><span>Password</span></a
+                ><i class="fas fa-lock fa-fw me-3"></i><span>{{ GoogleTranslate::trans('Password', app()->getLocale()) }}</span></a
                 >
                 <a
                     href="#"
@@ -109,14 +109,14 @@
                 <a
                     href="{{ route('orders.list') }}"
                     class="list-group-item list-group-item-action py-2 ripple {{ request()->routeIs('orders.*') ? 'active' : 'hidden' }}"
-                ><i class="fas fa-chart-bar fa-fw me-3"></i><span>Orders</span></a
+                ><i class="fas fa-chart-bar fa-fw me-3"></i><span>{{ GoogleTranslate::trans('Orders', app()->getLocale()) }}</span></a
                 >
 
 
                 <a
                     href="{{ route('customers.list') }}"
                     class="list-group-item list-group-item-action py-2 ripple {{ request()->routeIs('customers.*') ? 'active' : 'hidden' }}"
-                ><i class="fas fa-users fa-fw me-3"></i><span>Customers</span></a
+                ><i class="fas fa-users fa-fw me-3"></i><span>{{ GoogleTranslate::trans('Customers', app()->getLocale()) }}</span></a
                 >
 
             </div>
@@ -226,51 +226,41 @@
                         aria-labelledby="navbarDropdown"
                     >
                         <li>
-                            <a class="dropdown-item" href="#"
+                            <a class="dropdown-item" href="{{ route('getLocale', 'en') }}"
                             ><i class="united kingdom flag"></i>English
-                                <i class="fa fa-check text-success ms-2"></i
-                                ></a>
+                                @if(session('language') == 'en')
+                                    <i class="fa fa-check text-success ms-2"></i
+                                    >
+                                @endif
+
+                            </a>
                         </li>
                         <li><hr class="dropdown-divider" /></li>
                         <li>
-                            <a class="dropdown-item" href="#"
-                            ><i class="poland flag"></i>Polski</a
-                            >
+                            <a class="dropdown-item" href="{{ route('getLocale', 'vi') }}"
+                            ><i class="poland flag"></i>Viet Nam
+                                @if(session('language') == 'vi')
+                                    <i class="fa fa-check text-success ms-2"></i>
+                                @endif
+                            </a>
+
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#"
-                            ><i class="china flag"></i>中文</a
-                            >
+                            <a class="dropdown-item" href="{{ route('getLocale', 'fr') }}"
+                            ><i class="poland flag"></i> France
+                                @if(session('language') == 'fr')
+                                    <i class="fa fa-check text-success ms-2"></i>
+                                @endif
+                            </a>
+
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#"
-                            ><i class="japan flag"></i>日本語</a
-                            >
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
-                            ><i class="germany flag"></i>Deutsch</a
-                            >
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
-                            ><i class="france flag"></i>Français</a
-                            >
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
-                            ><i class="spain flag"></i>Español</a
-                            >
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
-                            ><i class="russia flag"></i>Русский</a
-                            >
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#"
-                            ><i class="portugal flag"></i>Português</a
-                            >
+                            <a class="dropdown-item" href="{{ route('getLocale', 'ja') }}"
+                            ><i class="poland flag"></i> Japanese
+                            @if(session('language') == 'ja')
+                                <i class="fa fa-check text-success ms-2"></i>
+                                @endif
+                            </a>
                         </li>
                     </ul>
                 </li>

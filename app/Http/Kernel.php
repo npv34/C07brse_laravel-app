@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\CheckAgeMiddleware;
 use App\Http\Middleware\CheckLogin;
+use App\Http\Middleware\SetLanguage;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -68,6 +69,7 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         // khai bao middleware for you
         'checkAge' => CheckAgeMiddleware::class,
-        'checkLogin' => CheckLogin::class
+        'checkLogin' => CheckLogin::class,
+        'setLocale' => SetLanguage::class
     ];
 }

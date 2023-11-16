@@ -30,7 +30,10 @@ Route::prefix('/admin')->group(function () {
     Route::get('/forgot-password', [\App\Http\Controllers\LoginController::class, 'showFormForgetPassword'])->name('forgot-password');
     Route::post('/forgot-password', [\App\Http\Controllers\LoginController::class, 'forgotPassword'])->name('forgot-password-submit');
 
-    Route::middleware('checkLogin')->group(function (){
+
+    Route::get('/setLocale/{language}', [\App\Http\Controllers\LangController::class, 'getLocale'])->name('getLocale');
+
+    Route::middleware(['checkLogin','setLocale'])->group(function (){
         Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'showDashboard'])->name('dashboard');
         Route::prefix('products')->group(function (){
             Route::get('/', [\App\Http\Controllers\ProductController::class, 'showListProduct'])->name('products.list');
